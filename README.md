@@ -1,5 +1,5 @@
 
-# Project tic tac toe [Live preview](https://lancedang64.github.io/project_restaurant-page/)
+# Project restaurant page [Live preview](https://lancedang64.github.io/project_restaurant-page/)
 
 ## Introduction
 Hi, in this project I built a restaurant page
