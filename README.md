@@ -8,6 +8,10 @@ Hi, in this project I built a restaurant page
 
 
 ## Knowledge and skills learnt and used
+- npm package manager
+  - webpack module bundler
+    - adding module, loader
+
 - Javascript
   - Factory functions, module 
   - Array
