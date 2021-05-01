@@ -22,6 +22,11 @@ html {
   margin: 0;
 }
 
+div.content {
+  height: 100%;
+  width: 100%;
+}
+
 .bg-image {
   background-image: url('./images/cafe-image.jpg');
   filter: grayscale(20%) contrast(110%);
@@ -57,23 +62,45 @@ footer {
   font-size: 4.5vw;
 }
 
+.tab-item:hover {
+  cursor: pointer;
+}
+
+.tab-item--selected {
+  color: red;
+}
+
 .tab-item--logo {
   flex-shrink: 0;
 }
 
-.content {
-  height: 100%;
-  width: 100%;
-}
-
-.home-screen--logo {
+.tab-content {
+  display: none;
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+.tab-content--selected {
+  display: block;
+  animation: fade-in 0.5s;
+}
+
+#home-screen-logo {
   width: 40%;
   opacity: 90%;
+}
+
+.board-content {
+  background-color: white;
+  width: 80%;
+  height: 73%;
+  opacity: 96%;
+  top: 52%;
+  border: 2px solid black;
+  border-radius: 30px;
 }
 
 footer {
@@ -82,7 +109,6 @@ footer {
   height: 5%;
   background-color: black;
   font-size: 1.2em;
-
 }
 
 .footer-content {
@@ -90,5 +116,14 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family:sans-serif;
+  font-family: sans-serif;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 96%;
+  }
 }

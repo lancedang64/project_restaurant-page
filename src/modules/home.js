@@ -1,6 +1,7 @@
-import renderNavBar from "./nav-bar.js";
-import renderHomeTab from "./home-tab.js";
-import renderFooter from "./footer.js";
+import renderNavBar from './nav-bar.js';
+import renderHomeTab from './tab-home.js';
+import renderFooter from './footer.js';
+import renderMenuTab from './tab-menu.js';
 
 const renderHome = () => {
   const contentDiv = document.querySelector('.content');
@@ -12,9 +13,10 @@ const renderHome = () => {
   renderNavBar(contentDiv);
 
   const tabContent = document.createElement('div');
-  tabContent.setAttribute('class', 'tab-content');
+  tabContent.setAttribute('class', 'tab-content-container');
   contentDiv.appendChild(tabContent);
   renderHomeTab(tabContent);
+  renderMenuTab(tabContent);
 
   renderFooter(contentDiv);
 };
