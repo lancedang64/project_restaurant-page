@@ -31,7 +31,7 @@ html {
   background-size: cover;
 }
 
-header,
+nav,
 footer {
   position: fixed;
   left: 0;
@@ -39,7 +39,7 @@ footer {
   color: white;
 }
 
-header#nav-bar {
+#nav-bar {
   opacity: 70%;
   height: 12%;
   background-color: black;
@@ -81,7 +81,7 @@ footer {
   bottom: 0;
   height: 5%;
   background-color: black;
-  font-size: 1.3em;
+  font-size: 1.2em;
 
 }
 
@@ -90,4 +90,5 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family:sans-serif;
 }

@@ -1,0 +1,1 @@
+export {bgImage} from "./bg-image-div.js";
