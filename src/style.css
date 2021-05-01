@@ -70,8 +70,14 @@ footer {
   color: red;
 }
 
-.tab-item--logo {
+#item-logo {
   flex-shrink: 0;
+  width: 16%;
+  animation: fade-in 0.5s;
+}
+
+.hidden {
+  display:none;
 }
 
 .tab-content {
@@ -88,7 +94,7 @@ footer {
   animation: fade-in 0.5s;
 }
 
-#home-screen-logo {
+#logo {
   width: 40%;
   opacity: 90%;
 }

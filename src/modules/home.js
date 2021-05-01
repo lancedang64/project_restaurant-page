@@ -2,6 +2,7 @@ import renderNavBar from './nav-bar.js';
 import renderHomeTab from './tab-home.js';
 import renderFooter from './footer.js';
 import renderMenuTab from './tab-menu.js';
+import renderBookingTab from './tab-booking.js';
 
 const renderHome = () => {
   const contentDiv = document.querySelector('.content');
@@ -17,6 +18,7 @@ const renderHome = () => {
   contentDiv.appendChild(tabContent);
   renderHomeTab(tabContent);
   renderMenuTab(tabContent);
+  renderBookingTab(tabContent);
 
   renderFooter(contentDiv);
 };

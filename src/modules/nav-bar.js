@@ -12,11 +12,16 @@ const renderNavBar = (parentNode) => {
 
   const menuTab = getTabElement('menu');
   const bookingTab = getTabElement('booking');
+  const contactTab = getTabElement('contact');
   const onlineOrderTab = getTabElement('online order');
   onlineOrderTab.setAttribute('id', 'item-online-order');
-  const contactTab = getTabElement('contact');
 
-  navBar.append(menuTab, bookingTab, onlineOrderTab, contactTab);
+  const homeTab = document.createElement('img');
+  homeTab.setAttribute('src', './images/logo-white.svg');
+  homeTab.setAttribute('class', 'tab-item hidden');
+  homeTab.setAttribute('id', 'item-logo');
+
+  navBar.append(menuTab, bookingTab, homeTab, onlineOrderTab, contactTab);
   parentNode.appendChild(navBar);
 };
 

@@ -1,10 +1,12 @@
 //import "./style.css";
 // uncomment for DIST !!!
 import renderHome from './modules/home.js';
+renderHome();
 
 const tabController = (() => {
-    const itemSelected = 'tab-item--selected';
-    const contentSelected = 'tab-content--selected';
+  const itemSelected = 'tab-item--selected';
+  const contentSelected = 'tab-content--selected';
+  const itemLogo = document.querySelector('#item-logo');
 
   const addEventListeners = () => {
     const tabItems = document.querySelectorAll('.tab-item');
@@ -12,27 +14,37 @@ const tabController = (() => {
   };
 
   const chooseTab = (e) => {
+    if (e.target.id === 'logo') return;
+    e.target.id === 'item-logo' ? hideItemLogo() : showItemLogo();
     removeCurrentTab();
     addChosenTab(e);
   };
 
+  const hideItemLogo = () => {
+    itemLogo.classList.add('hidden');
+  };
+
+  const showItemLogo = () => {
+    if (itemLogo.classList.contains('hidden'))
+      itemLogo.classList.remove('hidden');
+  };
+
   const removeCurrentTab = () => {
     const item = document.querySelector('.' + itemSelected);
-    if(item) item.classList.remove(itemSelected);
     const content = document.querySelector('.' + contentSelected);
-    content.classList.remove(contentSelected);    
+    item.classList.remove(itemSelected);
+    content.classList.remove(contentSelected);
   };
 
   const addChosenTab = (e) => {
-      const tabName = e.target.id.slice(5);
-      const item = document.querySelector(`#item-${tabName}`);
-      if(item) item.classList.add(itemSelected);
-      const content = document.querySelector(`#${tabName}`);
-      content.classList.add(contentSelected);
-    };
+    const tabName = e.target.id.slice(5);
+    const item = document.querySelector(`#item-${tabName}`);
+    const content = document.querySelector(`#${tabName}`);
+    item.classList.add(itemSelected);
+    content.classList.add(contentSelected);
+  };
 
   return { addEventListeners };
 })();
 
-renderHome();
 tabController.addEventListeners();
