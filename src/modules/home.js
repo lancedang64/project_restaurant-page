@@ -3,8 +3,10 @@ import renderHomeTab from './tab-home.js';
 import renderFooter from './footer.js';
 import renderMenuTab from './tab-menu.js';
 import renderBookingTab from './tab-booking.js';
+import renderOrderTab from './tab-online-order.js';
+import renderContactTab from './tab-contact.js';
 
-const renderHome = () => {
+const loadPage = () => {
   const contentDiv = document.querySelector('.content');
 
   const bgImageDiv = document.createElement('div');
@@ -19,8 +21,10 @@ const renderHome = () => {
   renderHomeTab(tabContent);
   renderMenuTab(tabContent);
   renderBookingTab(tabContent);
+  renderOrderTab(tabContent);
+  renderContactTab(tabContent);
 
   renderFooter(contentDiv);
 };
 
-export default renderHome;
+export default loadPage;

@@ -64,20 +64,28 @@ footer {
 
 .tab-item:hover {
   cursor: pointer;
+  color: #53b6b3;
+  animation: fade-in 0.5s;
 }
 
 .tab-item--selected {
-  color: red;
+  color: #53b6b3;
+  animation: fade-in 0.5s;
 }
 
 #item-logo {
   flex-shrink: 0;
   width: 16%;
+  animation: fade-in-logo 0.5s;
+}
+
+#item-logo:hover {
+  background-color: #53b6b3;
   animation: fade-in 0.5s;
 }
 
 .hidden {
-  display:none;
+  display: none;
 }
 
 .tab-content {
@@ -131,5 +139,13 @@ footer {
   }
   100% {
     opacity: 96%;
+  }
+}
+
+@keyframes fade-in-logo {
+  0% {
+    background-color: none;
+  }
+  100% {
   }
 }
