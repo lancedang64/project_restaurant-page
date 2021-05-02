@@ -59,13 +59,13 @@ footer {
   color: white;
   text-decoration: none;
   text-align: center;
-  font-size: 4.5vw;
+  font-size: 300%;
 }
 
 .tab-item:hover {
   cursor: pointer;
-  color: #53b6b3;
-  animation: fade-in 0.5s;
+  animation: fade-in-color 0.7s;
+  animation-fill-mode: forwards;
 }
 
 .tab-item--selected {
@@ -74,14 +74,13 @@ footer {
 }
 
 #item-logo {
-  flex-shrink: 0;
-  width: 16%;
-  animation: fade-in-logo 0.5s;
+  max-width: 11%;
+  animation: fade-in 0.5s;
 }
 
 #item-logo:hover {
-  background-color: #53b6b3;
-  animation: fade-in 0.5s;
+  animation: fade-in-bg-color 0.7s;
+  animation-fill-mode: forwards;
 }
 
 .hidden {
@@ -142,10 +141,20 @@ footer {
   }
 }
 
-@keyframes fade-in-logo {
+@keyframes fade-in-bg-color {
   0% {
     background-color: none;
   }
   100% {
+    background-color: #53b6b3;
+  }
+}
+
+@keyframes fade-in-color {
+  0% {
+    color: none;
+  }
+  100% {
+    color: #53b6b3;
   }
 }

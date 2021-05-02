@@ -3,7 +3,7 @@ const renderNavBar = (parentNode) => {
   navBar.setAttribute('id', 'nav-bar');
 
   const getTabElement = (text) => {
-    const linksEle = document.createElement('p');
+    const linksEle = document.createElement('span');
     linksEle.setAttribute('id', `item-${text}`);
     linksEle.setAttribute('class', 'tab-item');
     linksEle.innerHTML = text;

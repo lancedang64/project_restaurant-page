@@ -1,7 +1,7 @@
 //import "./style.css";
 // uncomment for DIST !!!
-import renderHome from './modules/home.js';
-renderHome();
+import loadPage from './modules/loadPage.js';
+loadPage();
 
 const tabController = (() => {
   const itemSelected = 'tab-item--selected';
