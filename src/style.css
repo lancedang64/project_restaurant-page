@@ -107,13 +107,47 @@ footer {
 }
 
 .board-content {
-  background-color: white;
+  background-color: #a09e9e;
   width: 80%;
   height: 73%;
   opacity: 96%;
   top: 52%;
   border: 2px solid black;
   border-radius: 30px;
+  text-align: center;
+}
+
+#menu {
+  background-color: #53b6b3;
+}
+
+#menu-1, #menu-2 {
+  height: 95%;
+  width: 95%;
+  margin-top: 1.5%;
+}
+
+.menu-arrow {
+  height: 15%;
+  width: 5%;
+  opacity: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
+  font-size: 2em;
+}
+
+.menu-arrow:hover {
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+#left-arrow {
+  left: 0%;
+}
+
+#right-arrow {
+  right: 0%;
 }
 
 footer {

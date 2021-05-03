@@ -11,6 +11,9 @@ const tabController = (() => {
   const addEventListeners = () => {
     const tabItems = document.querySelectorAll('.tab-item');
     tabItems.forEach((item) => item.addEventListener('click', chooseTab));
+
+    const menuArrows = document.querySelectorAll('.menu-arrow');
+    menuArrows.forEach((arrow) => arrow.addEventListener('click', switchMenu));
   };
 
   const chooseTab = (e) => {
@@ -42,6 +45,16 @@ const tabController = (() => {
     const content = document.querySelector(`#${tabName}`);
     item.classList.add(itemSelected);
     content.classList.add(contentSelected);
+  };
+
+  const switchMenu = () => {
+    const nextMenu = document.querySelector('.menu-img.hidden');
+    const prevMenu =
+      nextMenu.id === 'menu-1'
+        ? document.querySelector('#menu-2')
+        : document.querySelector('#menu-1');
+    nextMenu.classList.remove('hidden');
+    prevMenu.classList.add('hidden');
   };
 
   return { addEventListeners };
