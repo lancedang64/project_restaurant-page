@@ -4,7 +4,7 @@
 import loadPage from './modules/loadPage.js';
 import menu from './modules/menu.js';
 import contact from './modules/contact.js';
-import home from './modules/home.js'
+import home from './modules/home.js';
 loadPage();
 
 const tabController = (() => {
@@ -18,11 +18,12 @@ const tabController = (() => {
   };
 
   const chooseTab = (e) => {
-    if (e.target.id === 'logo') return;
-    e.target.id === 'item-logo' ? hideItemLogo() : showItemLogo();
+    const tabName = e.target.id.slice(5);
+    if (tabName === 'booking' || tabName === 'onlineOrder') return;
+    tabName === 'logo' ? hideItemLogo() : showItemLogo();
     removeCurrentTab();
-    changeTabItem(e);
-    renderChosenTab(e);
+    changeTabItem(tabName);
+    renderChosenTab(tabName);
   };
 
   const hideItemLogo = () => {
@@ -41,14 +42,12 @@ const tabController = (() => {
     if (content) content.remove();
   };
 
-  const changeTabItem = (e) => {
-    const tabName = e.target.id.slice(5);
+  const changeTabItem = (tabName) => {
     const item = document.querySelector(`#item-${tabName}`);
     item.classList.add(itemSelected);
   };
 
-  const renderChosenTab = (e) => {
-    const tabName = e.target.id.slice(5);
+  const renderChosenTab = (tabName) => {
     if (tabName === 'menu') {
       menu();
       addMenuListeners();
