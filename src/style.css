@@ -131,9 +131,20 @@ footer {
 }
 
 #menu-1, #menu-2 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   height: 95%;
   width: 95%;
   margin-top: 1.5%;
+}
+
+#menu-1 {
+  background-image: url(./images/menu-1.jpg);
+}
+
+#menu-2 {
+  background-image: url(./images/menu-2.jpg);
 }
 
 .menu-arrow {

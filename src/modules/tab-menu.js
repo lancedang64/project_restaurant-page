@@ -4,12 +4,10 @@ const renderMenuTab = (parentNode) => {
   menuTab.setAttribute('id', 'menu');
 
   const menu1 = document.createElement('img');
-  menu1.setAttribute('src', './images/menu-1.jpg');
   menu1.setAttribute('id', 'menu-1');
   menu1.setAttribute('class', 'menu-img');
 
   const menu2 = document.createElement('img');
-  menu2.setAttribute('src', './images/menu-2.jpg');
   menu2.setAttribute('id', 'menu-2');
   menu2.setAttribute('class', 'menu-img hidden');
 
