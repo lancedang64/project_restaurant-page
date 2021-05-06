@@ -1,4 +1,6 @@
-const renderMenuTab = (parentNode) => {
+const menu = () => {
+  const tabContent = document.querySelector('.content');
+
   const menuTab = document.createElement('div');
   menuTab.setAttribute('class', 'tab-content board-content');
   menuTab.setAttribute('id', 'menu');
@@ -23,7 +25,7 @@ const renderMenuTab = (parentNode) => {
 
   menuTab.append(menu1, menu2, leftArrow, rightArrow);
 
-  parentNode.append(menuTab);
+  tabContent.append(menuTab);
 };
 
-export default renderMenuTab;
+export default menu;

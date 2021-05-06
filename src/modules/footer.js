@@ -1,4 +1,4 @@
-const renderFooter = (parentNode) => {
+const footer = (parentNode) => {
   const footer = document.createElement('footer');
   const footerContent = document.createElement('span');
   const gitHubLogo = document.createElement('a');
@@ -14,4 +14,4 @@ const renderFooter = (parentNode) => {
   parentNode.appendChild(footer);
 };
 
-export default renderFooter;
+export default footer;

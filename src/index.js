@@ -1,26 +1,28 @@
-import "./style.css";
+// import "./style.css";
 // uncomment for DIST !!!
+// comment for SRC !!!
 import loadPage from './modules/loadPage.js';
+import menu from './modules/menu.js';
+import contact from './modules/contact.js';
+import home from './modules/home.js'
 loadPage();
 
 const tabController = (() => {
   const itemSelected = 'tab-item--selected';
-  const contentSelected = 'tab-content--selected';
+  const contentSelected = 'tab-content';
   const itemLogo = document.querySelector('#item-logo');
 
   const addEventListeners = () => {
     const tabItems = document.querySelectorAll('.tab-item');
     tabItems.forEach((item) => item.addEventListener('click', chooseTab));
-
-    const menuArrows = document.querySelectorAll('.menu-arrow');
-    menuArrows.forEach((arrow) => arrow.addEventListener('click', switchMenu));
   };
 
   const chooseTab = (e) => {
     if (e.target.id === 'logo') return;
     e.target.id === 'item-logo' ? hideItemLogo() : showItemLogo();
     removeCurrentTab();
-    addChosenTab(e);
+    changeTabItem(e);
+    renderChosenTab(e);
   };
 
   const hideItemLogo = () => {
@@ -34,17 +36,30 @@ const tabController = (() => {
 
   const removeCurrentTab = () => {
     const item = document.querySelector('.' + itemSelected);
-    const content = document.querySelector('.' + contentSelected);
+    const content = document.querySelector('.tab-content');
     item.classList.remove(itemSelected);
-    content.classList.remove(contentSelected);
+    if (content) content.remove();
   };
 
-  const addChosenTab = (e) => {
+  const changeTabItem = (e) => {
     const tabName = e.target.id.slice(5);
     const item = document.querySelector(`#item-${tabName}`);
-    const content = document.querySelector(`#${tabName}`);
     item.classList.add(itemSelected);
-    content.classList.add(contentSelected);
+  };
+
+  const renderChosenTab = (e) => {
+    const tabName = e.target.id.slice(5);
+    if (tabName === 'menu') {
+      menu();
+      addMenuListeners();
+    }
+    if (tabName === 'contact') contact();
+    if (tabName === 'logo') home();
+  };
+
+  const addMenuListeners = () => {
+    const menuArrows = document.querySelectorAll('.menu-arrow');
+    menuArrows.forEach((arrow) => arrow.addEventListener('click', switchMenu));
   };
 
   const switchMenu = () => {

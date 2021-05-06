@@ -54,11 +54,14 @@ footer {
   align-items: center;
 }
 
-.tab-item {
+a, p {
   font-family: 'JeanLuc-bold';
   color: white;
   text-decoration: none;
   text-align: center;
+}
+
+.tab-item {
   font-size: 300%;
 }
 
@@ -70,7 +73,6 @@ footer {
 
 .tab-item--selected {
   color: #53b6b3;
-  /* animation: fade-in 0.5s; */
 }
 
 #item-logo {
@@ -93,16 +95,11 @@ footer {
 }
 
 .tab-content {
-  display: none;
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-}
-
-.tab-content--selected {
-  display: block;
   animation: fade-in 0.5s;
 }
 
@@ -168,6 +165,10 @@ footer {
 
 #right-arrow {
   right: 0%;
+}
+
+#contact {
+  font-size: 233%;
 }
 
 footer {
