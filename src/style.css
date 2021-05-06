@@ -70,11 +70,16 @@ footer {
 
 .tab-item--selected {
   color: #53b6b3;
-  animation: fade-in 0.5s;
+  /* animation: fade-in 0.5s; */
 }
 
 #item-logo {
-  max-width: 11%;
+  background-image: url(./images/logo-white.svg);
+  max-width: 16%;
+  width: 16%;
+  height: 83%;
+  background-repeat: no-repeat;
+  background-position: center;
   animation: fade-in 0.5s;
 }
 
@@ -102,7 +107,11 @@ footer {
 }
 
 #logo {
+  background-image: url(./images/logo-white.svg);
   width: 40%;
+  height: 24%;
+  background-repeat: no-repeat;
+  background-position: center;
   opacity: 90%;
 }
 

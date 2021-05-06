@@ -1,4 +1,4 @@
-//import "./style.css";
+import "./style.css";
 // uncomment for DIST !!!
 import loadPage from './modules/loadPage.js';
 loadPage();

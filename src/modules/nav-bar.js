@@ -16,8 +16,7 @@ const renderNavBar = (parentNode) => {
   const onlineOrderTab = getTabElement('online order');
   onlineOrderTab.setAttribute('id', 'item-online-order');
 
-  const homeTab = document.createElement('img');
-  homeTab.setAttribute('src', './images/logo-white.svg');
+  const homeTab = document.createElement('span');
   homeTab.setAttribute('class', 'tab-item hidden');
   homeTab.setAttribute('id', 'item-logo');
 
