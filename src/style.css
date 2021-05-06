@@ -54,7 +54,7 @@ footer {
   align-items: center;
 }
 
-a, p {
+.tab-item, #contact > a, #contact > p {
   font-family: 'JeanLuc-bold';
   color: white;
   text-decoration: none;
@@ -176,15 +176,16 @@ footer {
   bottom: 0;
   height: 5%;
   background-color: black;
-  font-size: 1.2em;
+  font-size: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1%;
+  font-family: sans-serif;
 }
 
-.footer-content {
-  font-family: sans-serif;
+#shop {
+  color: white;
 }
 
 #github-logo {
