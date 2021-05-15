@@ -3,9 +3,6 @@
 
 ## Introduction
 Hi, in this project I built a restaurant page
-## Description
-
-
 
 ## Knowledge and skills learnt and used
 - npm package manager

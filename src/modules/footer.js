@@ -10,7 +10,7 @@ const footer = (parentNode) => {
   gitHubLogo.setAttribute('id', 'github-logo');
   gitHubLogo.setAttribute('href', 'https://github.com/lancedang64');
 
-  copyright.innerHTML = `All images, logos used in this personal project belong to <a href='http://www.armorywharfcafe.com/' , id='shop'>Armory Wharf Cafe</a> <br> Pending permission!`;
+  copyright.innerHTML = `All images, logos used in this personal project belong to <a href='http://www.armorywharfcafe.com/' , id='shop'>Armory Wharf Cafe</a> <br> Thanks Chloe for your permission!`;
 
   footer.append(footerContent, gitHubLogo, copyright);
 
