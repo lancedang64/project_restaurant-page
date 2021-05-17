@@ -1,6 +1,8 @@
+import { linksTab } from './linksTab';
+
 const navBar = (parentNode) => {
   const navBar = document.createElement('nav');
-  navBar.setAttribute('id', 'nav-bar');
+  navBar.setAttribute('class', 'nav-bar');
 
   const getTabElement = (text) => {
     const linksEle = document.createElement('a');
@@ -12,21 +14,13 @@ const navBar = (parentNode) => {
 
   const menuTab = getTabElement('menu');
   const contactTab = getTabElement('contact');
-
-  const bookingTab = getTabElement('booking');
-  bookingTab.href =
-    'https://www.thefork.com.au/restaurant/armory-wharf-cafe-r558803';
-
-  const onlineOrderTab = getTabElement('online order');
-  //special case since online order is 2 words
-  onlineOrderTab.id = 'item-onlineOrder';
-  onlineOrderTab.href = 'https://armorywharfcafe.orderup.com.au/';
+  const galleryTab = getTabElement('gallery');
 
   const homeTab = document.createElement('span');
   homeTab.setAttribute('class', 'tab-item hidden');
   homeTab.id = 'item-logo';
 
-  navBar.append(menuTab, bookingTab, homeTab, onlineOrderTab, contactTab);
+  navBar.append(menuTab, galleryTab, homeTab, linksTab, contactTab);
   parentNode.appendChild(navBar);
 };
 

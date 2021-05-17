@@ -9,14 +9,20 @@ loadPage();
 
 const tabController = (() => {
   const itemSelected = 'tab-item--selected';
-  const contentSelected = 'tab-content';
   const itemLogo = document.querySelector('#item-logo');
+  const linksTab = document.querySelector('#item-links');
+  const linksMenu = linksTab.querySelector('.links-menu');
 
   const addEventListeners = () => {
     const tabItems = document.querySelectorAll('.tab-item');
     tabItems.forEach((item) => item.addEventListener('click', chooseTab));
-  };
 
+    const linksItem = document.querySelector('.tab-item--links');
+    linksItem.addEventListener('click', showLinksMenu);
+    linksItem.addEventListener('mouseover', showLinksMenu);
+    linksItem.addEventListener('mouseout', hideLinksMenu);
+  };
+  
   const chooseTab = (e) => {
     const tabName = e.target.id.slice(5);
     if (tabName === 'booking' || tabName === 'onlineOrder') return;
@@ -55,6 +61,14 @@ const tabController = (() => {
     if (tabName === 'contact') contact();
     if (tabName === 'logo') home();
   };
+
+  const showLinksMenu = (e) => {
+    linksMenu.classList.remove('hidden');
+  };
+
+  const hideLinksMenu = (e) => {
+    linksMenu.classList.add('hidden');
+  }
 
   const addMenuListeners = () => {
     const menuArrows = document.querySelectorAll('.menu-arrow');

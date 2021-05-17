@@ -44,7 +44,7 @@ footer {
   color: white;
 }
 
-#nav-bar {
+.nav-bar {
   opacity: 70%;
   height: 12%;
   background-color: black;
@@ -54,18 +54,25 @@ footer {
   align-items: center;
 }
 
-.tab-item, #contact > a, #contact > p {
+.tab-item,
+.tab-item--links,
+.links-menu--item,
+#contact > a,
+#contact > p {
   font-family: 'JeanLuc-bold';
   color: white;
   text-decoration: none;
   text-align: center;
 }
 
-.tab-item {
+.tab-item,
+.tab-item--links {
   font-size: 300%;
 }
 
-.tab-item:hover {
+.tab-item:hover,
+.tab-item--links:hover,
+.links-menu--item:hover {
   cursor: pointer;
   animation: fade-in-color 0.7s;
   animation-fill-mode: forwards;
@@ -88,6 +95,21 @@ footer {
 #item-logo:hover {
   animation: fade-in-bg-color 0.7s;
   animation-fill-mode: forwards;
+}
+
+.links-menu {
+  position: absolute;
+  left: 60%;
+  transform: translate(-50%, 0%);
+  background-color: black;
+  opacity: 0;
+  animation: links-menu 300ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.links-menu--item {
+  display: block;
+  margin: 0.3em 0.3em;
 }
 
 .hidden {
@@ -127,7 +149,8 @@ footer {
   background-color: #53b6b3;
 }
 
-#menu-1, #menu-2 {
+#menu-1,
+#menu-2 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -150,7 +173,7 @@ footer {
   opacity: 80%;
   position: absolute;
   top: 50%;
-  transform: translate(0%,-50%);
+  transform: translate(0%, -50%);
   font-size: 2em;
 }
 
@@ -220,5 +243,14 @@ footer {
   }
   100% {
     color: #53b6b3;
+  }
+}
+
+@keyframes links-menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
   }
 }
