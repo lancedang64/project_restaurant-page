@@ -39,6 +39,8 @@ div.content {
 nav,
 footer {
   position: fixed;
+  /* so that links menu is on top of tab-content */
+  z-index: 2;
   left: 0;
   width: 100%;
   color: white;
@@ -99,8 +101,7 @@ footer {
 
 .links-menu {
   position: absolute;
-  left: 60%;
-  transform: translate(-50%, 0%);
+  transform: translate(-30%, 0%);
   background-color: black;
   opacity: 0;
   animation: links-menu 300ms ease-in-out;
@@ -121,7 +122,8 @@ footer {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  /* so that the content is above background image */
+  z-index: 1;
   animation: fade-in 0.5s;
 }
 

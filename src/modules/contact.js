@@ -1,6 +1,4 @@
 const contact = () => {
-  const tabContent = document.querySelector('.content');
-
   const contactTab = document.createElement('div');
   contactTab.setAttribute('class', 'tab-content board-content');
   contactTab.setAttribute('id', 'contact');
@@ -28,7 +26,8 @@ const contact = () => {
 
   contactTab.append(address, phone, hours);
 
-  tabContent.append(contactTab);
+  const tabContentContainer = document.querySelector('.tab-content-container');
+  tabContentContainer.appendChild(contactTab);
 };
 
 export default contact;
