@@ -2,40 +2,24 @@ const slideshow = (() => {
   let slideIndex = 0;
   let foodIMG;
 
-  const carousel = () => {
+  const initSlide = () => {
     foodIMG = document.querySelectorAll('.food');
-    if (foodIMG.length === 0) return;
     foodIMG.forEach((food) => food.classList.add('hidden'));
+    showSlide(slideIndex);
     slideIndex++;
-    if (slideIndex > foodIMG.length) slideIndex = 1;
-    showSlide(slideIndex - 1);
-    setTimeout(carousel, 4000);
-  };
-
-  // TODO: these functions throw error sometimes and behave not as wanted :(
-  const showSlide = (slideIndex) => {
-    foodIMG[slideIndex].classList.remove('hidden');
-  };
-
-  const hideSlide = (slideIndex) => {
-    foodIMG[slideIndex].classList.add('hidden');
-  };
-
-  const showPrevious = (e) => {
-    hideSlide(slideIndex);
-    slideIndex = slideIndex - 1;
-    if (slideIndex < 0) slideIndex = foodIMG.length - 1;
-    showSlide(slideIndex);
-  };
-
-  const showNext = (e) => {
-    hideSlide(slideIndex);
-    slideIndex = slideIndex + 1;
     if (slideIndex === foodIMG.length) slideIndex = 0;
-    showSlide(slideIndex);
+    setTimeout(initSlide, 2000);
   };
 
-  return { carousel, showNext, showPrevious };
+  const showSlide = (index) => {
+    foodIMG[index].classList.remove('hidden');
+  };
+
+  const hideSlide = (index) => {
+    foodIMG[index].classList.add('hidden');
+  };
+
+  return { initSlide };
 })();
 
 export { slideshow };

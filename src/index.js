@@ -7,6 +7,7 @@ import contact from './modules/contact.js';
 import home from './modules/home.js';
 import { gallery } from './modules/gallery';
 import { slideshow } from './modules/slideshow';
+
 loadPage();
 
 const tabController = (() => {
@@ -26,7 +27,6 @@ const tabController = (() => {
 
   const chooseTab = (e) => {
     const tabName = e.target.id.slice(5);
-    if (tabName === 'booking' || tabName === 'onlineOrder') return;
     tabName === 'logo' ? hideItemLogo() : showItemLogo();
     removeCurrentTab();
     changeTabItem(tabName);
@@ -63,15 +63,7 @@ const tabController = (() => {
 
   const openGalleryTab = () => {
     gallery();
-    slideshow.carousel();
-    addGalleryListeners();
-  };
-
-  const addGalleryListeners = () => {
-    const leftArrow = document.querySelector('#left-arrow');
-    const rightArrow = document.querySelector('#right-arrow');
-    leftArrow.addEventListener('click', slideshow.showPrevious);
-    rightArrow.addEventListener('click', slideshow.showNext);
+    slideshow.initSlide();
   };
 
   const openMenuTab = () => {
