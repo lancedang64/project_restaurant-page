@@ -1,15 +1,13 @@
 const menu = () => {
-  const tabContent = document.querySelector('.content');
-
   const menuTab = document.createElement('div');
-  menuTab.setAttribute('class', 'tab-content board-content');
+  menuTab.setAttribute('class', 'tab-content menu-content');
   menuTab.setAttribute('id', 'menu');
 
-  const menu1 = document.createElement('img');
+  const menu1 = document.createElement('div');
   menu1.setAttribute('id', 'menu-1');
   menu1.setAttribute('class', 'menu-img');
 
-  const menu2 = document.createElement('img');
+  const menu2 = document.createElement('div');
   menu2.setAttribute('id', 'menu-2');
   menu2.setAttribute('class', 'menu-img hidden');
 
@@ -25,7 +23,8 @@ const menu = () => {
 
   menuTab.append(menu1, menu2, leftArrow, rightArrow);
 
-  tabContent.append(menuTab);
+  const tabContentContainer = document.querySelector('.tab-content-container');
+  tabContentContainer.append(menuTab);
 };
 
 export default menu;

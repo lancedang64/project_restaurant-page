@@ -1,14 +1,15 @@
-import "./style.css";
+import './style.css';
 // uncomment for DIST !!!
 // comment for SRC !!!
 import loadPage from './modules/loadPage.js';
 import menu from './modules/menu.js';
 import contact from './modules/contact.js';
 import home from './modules/home.js';
+import { gallery } from './modules/gallery';
+import { slideshow } from './modules/slideshow';
 loadPage();
 
 const tabController = (() => {
-  const itemSelected = 'tab-item--selected';
   const itemLogo = document.querySelector('#item-logo');
   const linksTab = document.querySelector('#item-links');
   const linksMenu = linksTab.querySelector('.links-menu');
@@ -22,7 +23,7 @@ const tabController = (() => {
     linksItem.addEventListener('mouseover', showLinksMenu);
     linksItem.addEventListener('mouseout', hideLinksMenu);
   };
-  
+
   const chooseTab = (e) => {
     const tabName = e.target.id.slice(5);
     if (tabName === 'booking' || tabName === 'onlineOrder') return;
@@ -42,33 +43,41 @@ const tabController = (() => {
   };
 
   const removeCurrentTab = () => {
-    const item = document.querySelector('.' + itemSelected);
+    const item = document.querySelector('.' + 'tab-item--selected');
     const content = document.querySelector('.tab-content');
-    item.classList.remove(itemSelected);
+    item.classList.remove('tab-item--selected');
     if (content) content.remove();
   };
 
   const changeTabItem = (tabName) => {
     const item = document.querySelector(`#item-${tabName}`);
-    item.classList.add(itemSelected);
+    item.classList.add('tab-item--selected');
   };
 
   const renderChosenTab = (tabName) => {
-    if (tabName === 'menu') {
-      menu();
-      addMenuListeners();
-    }
+    if (tabName === 'menu') openMenuTab();
+    if (tabName === 'gallery') openGalleryTab();
     if (tabName === 'contact') contact();
     if (tabName === 'logo') home();
   };
 
-  const showLinksMenu = (e) => {
-    linksMenu.classList.remove('hidden');
+  const openGalleryTab = () => {
+    gallery();
+    slideshow.carousel();
+    addGalleryListeners();
   };
 
-  const hideLinksMenu = (e) => {
-    linksMenu.classList.add('hidden');
-  }
+  const addGalleryListeners = () => {
+    const leftArrow = document.querySelector('#left-arrow');
+    const rightArrow = document.querySelector('#right-arrow');
+    leftArrow.addEventListener('click', slideshow.showPrevious);
+    rightArrow.addEventListener('click', slideshow.showNext);
+  };
+
+  const openMenuTab = () => {
+    menu();
+    addMenuListeners();
+  };
 
   const addMenuListeners = () => {
     const menuArrows = document.querySelectorAll('.menu-arrow');
@@ -83,6 +92,14 @@ const tabController = (() => {
         : document.querySelector('#menu-1');
     nextMenu.classList.remove('hidden');
     prevMenu.classList.add('hidden');
+  };
+
+  const showLinksMenu = (e) => {
+    linksMenu.classList.remove('hidden');
+  };
+
+  const hideLinksMenu = (e) => {
+    linksMenu.classList.add('hidden');
   };
 
   return { addEventListeners };
