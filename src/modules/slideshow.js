@@ -9,7 +9,7 @@ const slideshow = (() => {
     slideIndex++;
     if (slideIndex > foodIMG.length) slideIndex = 1;
     showSlide(slideIndex - 1);
-    setTimeout(carousel, 2000);
+    setTimeout(carousel, 4000);
   };
 
   // TODO: these functions throw error sometimes and behave not as wanted :(
